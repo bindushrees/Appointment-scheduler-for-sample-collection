@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Medical Sample Process Streamline</title>
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ" crossorigin="anonymous"></script>
+
+    <!-- font awesome  -->
+    <script src="https://kit.fontawesome.com/14dab1683c.js" crossorigin="anonymous"></script>
+    
+    <!-- Custom CSS -->
+    <!--<link rel="stylesheet" href="C:/Users/bindu/OneDrive/Desktop/Data_Science_Course/0. Project/estimating_delivery_of sample_collection/static/css/style.css"> -->
+    <link rel="stylesheet" type="text/css" href="{{url_for('static' , filename = 'stylesheet.css')}}">
+  </head>
+  <body>
+    <strong><h1 class="display-5"> Medical Appointment Scheduler for Diagnostic Centers </h1><br></strong>
+
+    <div class="container mb-3"><hr>
+      <form class="" action="{{url_for("prediction")}}" method="post">
+        <!-- running chain Motors Input -->
+          <label for="patient_location">Patient location : </label><br>
+            <select id="patient_location" name="patient_location">
+              <option value="0">Serilingampalle (M)</option>
+              <option value="1">Ramachandrapuram</option>
+              <option value="2">Miyapur</option>
+              <option value="3">Nizampet </option>
+                <option value="4">Gachibowli</option>
+                <option value="5">Chanda Nagar</option>
+                <option value="4">Jubilee Hills</option>
+                <option value="7">Jeedimetla</option>
+                <option value="8">Kukatpally</option>
+                <option value="9">Hafeezpet</option>
+            </select><br><br>
+
+        <!-- carbonate gas line -->
+          <label for="Diagnostic_Centers"> Diagnostic Centers : </label><br>
+          <select id="Diagnostic_Centers" name="Diagnostic_Centers">
+            <option value="0">Apollo Diagnostics</option>
+            <option value="1">Lucid Medical Diagnostics</option>
+            <option value="2">Vivaa Diagnostic Center</option>
+            <option value="3">Medifine Diagnostic Center </option>
+              <option value="4">Diamond Diagnostic Center</option>
+              <option value="5">Tesla Diagnostics</option>
+              <option value="4">Pronto Diagnostics Center</option>
+              <option value="7">Sri Sai Diagnostic Center</option>
+              <option value="8">Medquest Diagnostics Center</option>
+              <option value="9">Vijaya Diagnostic Center</option>
+          </select><br><br>
+          
+          <label for="TimeSlot">TimeSlot : </label><br>
+          <select id="TimeSlot" name="TimeSlot">
+            <option value="0">06:00 to 21:00 (Home)</option>
+            <option value="1">19:00 to 22:00 (working person)</option>
+            <option value="2">06:00 to 18:00 (Collect at work place)</option>
+          </select><br><br>
+
+        <!-- Bottle Capping Unit  -->
+          <label for="Availabilty_time_Patient">Availabilty time of the Patient within the above mentioned TimeSlot : </label><br>
+          <select id="Availabilty_time_Patient" name="Availabilty_time_Patient">
+            <option value="0">09:00 to 10:00</option>
+            <option value="1">19:00 to 20:00</option>
+          </select><br><br>
+
+        <!-- Soft Drink Filler Machine -->
+          <label for="shortest_distance_Patient_Agent">Distance between Patient and Agent(m) :</label><br>
+          <input type="number" name="shortest_distance_Patient_Agent"><br><br>
+
+          <!-- button -->
+            <button type="submit" class="btn btn-outline-primary btn-lg">Predict</button>
+            <h1 class="navbar-brand">{{ output }}</h1>
+
+      </form>
+
+    </div>
+  </body>
+</html>

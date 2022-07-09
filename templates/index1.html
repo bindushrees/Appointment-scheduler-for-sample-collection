@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Medical Sample Process Streamline</title>
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ" crossorigin="anonymous"></script>
+
+    <!-- font awesome  -->
+    <script src="https://kit.fontawesome.com/14dab1683c.js" crossorigin="anonymous"></script>
+    
+    <!-- Custom CSS -->
+    <!--<link rel="stylesheet" href="C:/Users/bindu/OneDrive/Desktop/Data_Science_Course/0. Project/estimating_delivery_of sample_collection/static/css/style.css"> -->
+    <link rel="stylesheet" type="text/css" href="{{url_for('static' , filename = 'stylesheet.css')}}">
+  </head>
+  <body>
+    <strong><h1 class="display-5"> Medical Sample Collection</h1><br></strong>
+
+    <div class="container mb-3"><hr>
+      <form class="" action="{{url_for("prediction")}}" method="post">
+          
+          <label for="Agent_ID">Agent_ID</label><br><!--&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; -->
+          <select id="Agent_ID" name="Agent_ID">
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+          </select><br><br>
+    
+          <!-- button -->
+        <button type="submit" class="btnlg">Predict</button>
+        <table class="navbar-brand">{{ output }}</table>
+
+      </form>
+
+    </div>
+  </body>
+</html>
